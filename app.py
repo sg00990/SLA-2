@@ -27,8 +27,6 @@ ticket_data = st.data_editor(
 ticket_data = ticket_data.to_dict()
 
 
-st.write("**Date**")
-survey_date = st.date_input("survey_date", format="MM/DD/YYYY", label_visibility="collapsed")
 st.write("**Additional Comments**")
 survey_text = st.text_area("survey_text", label_visibility="collapsed")
 survey_text = survey_text.replace("\n", "  ").replace("'", "''").replace('"', r'\"')
@@ -39,7 +37,6 @@ with col3:
     if st.button("Submit", use_container_width=True):
         data = {
             "sla_2_tickets": ticket_data,
-            "sla_2_date": survey_date,
             "sla_2_comments": survey_text
         }
 
